@@ -1,4 +1,4 @@
-import uk.co.jaimon.SimpleImageInfo
+import com.barney.image.ImageInfo
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -17,35 +17,36 @@ fun main() {
     val path = File(System.getProperty("user.dir"))
     val files = path.listFiles()
     val fileTypes = setOf("png", "jpg", "jpeg", "gif", "tiff", "bmp")
-    countFiles(input=files, types=fileTypes)
-    println("Make sure this file is in the same folder as your images.")
-    moveOrNot()
-    for (i in files.indices) {
-        if ((files[i].isFile) and (files[i].extension in fileTypes)) {
-            var x = aspectRatio(files[i])
-            when{
-                (0.9f <= x) and (x <= 1.1f) -> {
-                    checkDirMove(dirname="Square", input=files[i])
-                    Info.square++
+    if(countFiles(input=files, types=fileTypes)==0) println("Make sure this file is in the same folder as your images.")
+    else {
+        moveOrNot()
+        for (i in files.indices) {
+            if ((files[i].isFile) and (files[i].extension in fileTypes)) {
+                var x = aspectRatio(files[i])
+                when {
+                    (0.9f <= x) and (x <= 1.1f) -> {
+                        checkDirMove(dirname = "Square", input = files[i])
+                        Info.square++
+                    }
+                    (x < 0.9f) -> {
+                        checkDirMove(dirname = "Portrait", input = files[i])
+                        Info.portrait++
+                    }
+                    (1.1f < x) and (x <= 1.8f) -> {
+                        checkDirMove(dirname = "Wide", input = files[i])
+                        Info.wide++
+                    }
+                    (1.8f < x) -> {
+                        checkDirMove(dirname = "Ultrawide", input = files[i])
+                        Info.ultraWide++
+                    }
                 }
-                (x<0.9f) -> {
-                    checkDirMove(dirname="Portrait", input=files[i])
-                    Info.portrait++
-                }
-                (1.1f < x) and (x <= 1.8f) -> {
-                    checkDirMove(dirname="Wide", input=files[i])
-                    Info.wide++
-                }
-                (1.8f < x) -> {
-                    checkDirMove(dirname="Ultrawide", input=files[i])
-                    Info.ultraWide++
-                }
+                if (Info.moveBool == true) println("Moved " + files[i])
+                else println("Copied" + files[i])
             }
-            if (Info.moveBool==true) println("Moved " + files[i])
-            else println("Copied" + files[i])
         }
+        println("Sorting complete. ${Info.square} square, ${Info.portrait} portrait, ${Info.wide} wide, ${Info.ultraWide} ultra-wide images were sorted.")
     }
-    println("Sorting complete. ${Info.square} square, ${Info.portrait} portrait, ${Info.wide} wide, ${Info.ultraWide} ultra-wide images were sorted.")
 }
 
 tailrec fun moveOrNot(){
@@ -69,7 +70,7 @@ tailrec fun moveOrNot(){
 }
 
 fun aspectRatio(input: File): Float {
-    val imageInput = SimpleImageInfo(input)
+    val imageInput = ImageInfo(input)
     return imageInput.width.toFloat() / imageInput.height
 }
 
@@ -83,12 +84,13 @@ fun checkDirMove(dirname: String, input: File){
     else Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING)
 }
 
-fun countFiles(input: Array<File>, types: Set<String>) {
+fun countFiles(input: Array<File>, types: Set<String>):Int {
     var imageCount = 0
     for (i in input.indices) {
         if (input[i].extension in types) imageCount++
     }
     println("$imageCount images found.")
+    return imageCount
 }
 
 
