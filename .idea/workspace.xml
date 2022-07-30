@@ -6,12 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="621fd8d0-eeef-48ad-8570-c2255a5d412b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/barney/image/ImageInfo.kt" afterDir="false" />
+    <list default="true" id="621fd8d0-eeef-48ad-8570-c2255a5d412b" name="Changes" comment="ImageInfo rewritten in Kotlin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uk/co/jaimon/SimpleImageInfo.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1659186491127</updated>
     </task>
+    <task id="LOCAL-00001" summary="ImageInfo rewritten in Kotlin">
+      <created>1659200089458</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659200089458</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ImageInfo rewritten in Kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="ImageInfo rewritten in Kotlin" />
   </component>
 </project>
