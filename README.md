@@ -16,5 +16,8 @@ A simple command line tool for sorting images based on aspect ratio (square, por
 - `java -jar ImageSorter.jar`
 - Follow the instructions as prompted.
 
+### Requirements
+- Java 18 or above
+
 Any suggestions or code changes are welcome!
 Enjoy!
