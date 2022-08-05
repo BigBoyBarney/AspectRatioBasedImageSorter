@@ -1,4 +1,4 @@
-# AspectRatioBasedImageSorter
+# Aspect Ratio Based Image Sorter
 
 A simple command line tool for sorting images based on aspect ratio (square, portrait, wide, ultrawide) written in Kotlin. 
 
