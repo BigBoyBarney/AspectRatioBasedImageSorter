@@ -13,7 +13,9 @@ class CountInfo(
 )
 
 var Info = CountInfo()
+const val Version: String = "1.0.1"
 fun main() {
+    println("Version $Version.")
     val path = File(System.getProperty("user.dir"))
     val files = path.listFiles()
     val fileTypes = setOf("png", "jpg", "jpeg", "gif", "tiff", "bmp")

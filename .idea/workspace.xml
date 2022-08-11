@@ -6,9 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="621fd8d0-eeef-48ad-8570-c2255a5d412b" name="Changes" comment="ImageInfo rewritten in Kotlin">
+    <list default="true" id="621fd8d0-eeef-48ad-8570-c2255a5d412b" name="Changes" comment="Refactored code so it's no longer turbo ugly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/barney/image/ImageInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/barney/image/ImageInfo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659200089458</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactored code so it's no longer turbo ugly">
+      <created>1660210187555</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660210187555</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ImageInfo rewritten in Kotlin" />
-    <option name="LAST_COMMIT_MESSAGE" value="ImageInfo rewritten in Kotlin" />
+    <MESSAGE value="Refactored code so it's no longer turbo ugly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored code so it's no longer turbo ugly" />
   </component>
 </project>
