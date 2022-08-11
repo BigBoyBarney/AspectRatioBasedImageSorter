@@ -5,29 +5,18 @@ import java.io.*
 and https://jaimonmathew.wordpress.com/2011/01/29/simpleimageinfo/) rewritten in Kotlin.
 * */
 
-class ImageInfo {
+class ImageInfo(file: File?) {
     var height = 0
     var width = 0
     var mimeType: String? = null
 
-    private constructor() {}
-    constructor(file: File?) {
-        val `is`: InputStream = FileInputStream(file)
-        `is`.use {`is` ->
-            processStream(`is`)
+    init {
+        val stream: InputStream = FileInputStream(file!!)
+        stream.use { inputStream ->
+            processStream(inputStream)
         }
     }
 
-    constructor(`is`: InputStream) {
-        processStream(`is`)
-    }
-
-    constructor(bytes: ByteArray?) {
-        val `is`: InputStream = ByteArrayInputStream(bytes)
-        `is`.use { `is` ->
-            processStream(`is`)
-        }
-    }
 
     @Throws(IOException::class)
     private fun processStream(IS: InputStream) {
@@ -72,14 +61,13 @@ class ImageInfo {
             val c4 = IS.read()
             if ((c1 == 'M'.code && c2 == 'M'.code && c3 == 0 && c4 == 42) || (c1 == 'I'.code && c2 == 'I'.code && c3 == 42 && c4 == 0)) { //TIFF
                 val bigEndian = c1 == 'M'.code
-                var ifd = 0
-                ifd = readInt(IS, 4, bigEndian)
+                val ifd: Int = readInt(IS, 4, bigEndian)
                 IS.skip((ifd - 8).toLong())
                 val entries: Int = readInt(IS, 2, bigEndian)
                 for (i in 1..entries) {
                     val tag = readInt(IS, 2, bigEndian)
                     val fieldType = readInt(IS, 2, bigEndian)
-                    val count = readInt(IS, 4, bigEndian).toLong()
+                    readInt(IS, 4, bigEndian).toLong()
                     var valOffset: Int
                     if (fieldType == 3 || fieldType == 8) {
                         valOffset = readInt(IS, 2, bigEndian)

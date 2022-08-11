@@ -17,12 +17,12 @@ fun main() {
     val path = File(System.getProperty("user.dir"))
     val files = path.listFiles()
     val fileTypes = setOf("png", "jpg", "jpeg", "gif", "tiff", "bmp")
-    if(countFiles(input=files, types=fileTypes)==0) println("Make sure this file is in the same folder as your images.")
+    if(countFiles(input= files!!, types=fileTypes)==0) println("Make sure this file is in the same folder as your images.")
     else {
         moveOrNot()
         for (i in files.indices) {
             if ((files[i].isFile) and (files[i].extension in fileTypes)) {
-                var x = aspectRatio(files[i])
+                val x = aspectRatio(files[i])
                 when {
                     (0.9f <= x) and (x <= 1.1f) -> {
                         checkDirMove(dirname = "Square", input = files[i])
@@ -41,7 +41,7 @@ fun main() {
                         Info.ultraWide++
                     }
                 }
-                if (Info.moveBool == true) println("Moved " + files[i])
+                if (Info.moveBool) println("Moved " + files[i])
                 else println("Copied" + files[i])
             }
         }

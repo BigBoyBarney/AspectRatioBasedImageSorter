@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="621fd8d0-eeef-48ad-8570-c2255a5d412b" name="Changes" comment="ImageInfo rewritten in Kotlin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/barney/image/ImageInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/barney/image/ImageInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
